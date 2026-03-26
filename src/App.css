@@ -1,13 +1,20 @@
 body {
   font-family: Arial, sans-serif;
+  margin: 0;
+  height: 100vh;
+
+  /* Background image */
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
-  background-color: #0C67A0;
 }
-
 .container {
   display: flex;
   justify-content: center;
@@ -17,11 +24,17 @@ body {
 }
 
 .form-container {
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  padding: 30px;
+  border-radius: 15px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+
+  width: 320px;
+  color: white;
 }
 
 .form-toggle {
@@ -29,45 +42,66 @@ body {
   justify-content: space-between;
   margin-bottom: 20px;
 }
-
 .form-toggle button {
   width: 50%;
   padding: 10px;
-  background-color: #f3f3f3;
+
+  background: rgba(255,255,255,0.2);
+  color: white;
+
   border: none;
   cursor: pointer;
+
   font-size: 16px;
   border-radius: 10px 10px 0 0;
 }
-
 .form-toggle .active {
-  background-color: #033452;
+  background: #033452;
   color: white;
 }
-
 .form {
   display: flex;
   flex-direction: column;
+  gap: 5px; /* small breathing space */
 }
 
 .form h2 {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+}
+.form input {
+  padding: 12px;
+  margin-bottom: 15px; /* 🔥 more spacing */
+
+  border: none;
+  border-radius: 10px;
+
+  outline: none;
+
+  background: rgba(255,255,255,0.25);
+  color: white;
+
+  font-size: 14px;
 }
 
-.form input {
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+.form input::placeholder {
+  color: #ddd;
 }
 
 .form button {
-  padding: 10px;
-  background-color:#033452;
+  padding: 12px;
+  background: linear-gradient(135deg, #0C67A0, #033452);
   color: white;
+
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
+
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.form button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #033452, #0C67A0);
 }
 
 .form a {
@@ -79,4 +113,16 @@ body {
 
 .form p {
   text-align: center;
+}
+.error-box {
+  background: rgba(255, 0, 0, 0.15);
+  color: #ff4d4d;
+
+  padding: 10px;
+  border-radius: 8px;
+
+  margin-bottom: 15px; /* 🔥 THIS FIXES GAP */
+  font-size: 14px;
+
+  text-align: left;
 }
